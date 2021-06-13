@@ -1,0 +1,134 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+class student{
+    char name[20];
+    string regno[20];
+    int firstsem,secondsem,thirdsem;
+    long phno;
+    public:
+           void getdata();
+           void setdata();
+           void display();
+           void display1();
+           void modify();
+           void delete();
+           
+};
+void student::getdata()
+{
+    cout<<"Enter the student name\n";
+    cin.ignore();
+    cin.getline(name,20);
+    cout<<"Enter the USN";
+    cin>>regno;
+    cout<<"Enter I sem sgpa";
+    cin>>firstsem;
+    cout>>"Enter the second sem sgpa";
+    cin>>secondsem;
+    cout>>"Enter the third sem";
+    cin>>thirdsem;
+    cout>>"Enter the phno";
+    cin>>phno;
+}
+void student::display()
+{
+    cout<<"Name:"<<name;
+    cout<<"USN:"<<regno;
+    cout<<"Firstsem"<<"result:"<<firstsem;
+    cout<<"Secondsem"<<"result:"<<secondsem;
+    cout<<"Thirdsem"<<"result:"<<thirdsem;
+    cout<<"Contactno:"<<phno;
+}
+void student::setdata()
+{
+    cout<<"Enter the total no of students";
+    cin>>count;
+    student studentdata[count];
+    if(count>0)
+    {
+       for(int i=0;i<count;i++)
+       {
+           cout<<"Student"<<i+1<<":"<<endl;
+           studentdata[i].getdata();
+       }
+        }
+        void student::display1()
+        {
+            cout<<"enter the id no";
+            cin>>count;
+              if(count>2)
+              {
+                  for(int i=0;i<count;i++)
+                  {
+                      cout<<"Students"<<i+1<<":"<<endl;
+                      studentdata[i].display();
+                  }
+              }
+        }
+        void student::search()
+        {
+            cout<<"enter the count";
+            cin>>count;
+            if(count==studentdata[i])
+            {
+                studentdata[i].display();
+            }
+        }
+        void student::modify()
+        {
+            cout<<"Enter the Id no you want to modify";
+            cin>>count;
+            if(count==studentdata[i])
+            {
+                studentdata[i].getdata();
+            }
+        }
+        void student::delete()
+        {
+            int remove();
+            cout<<"Enter the id no u want to delete";
+            cin>>count;
+            if(count==studentdata[i])
+            {
+                studentdata[i].remove();
+                
+            }
+        }
+}
+
+
+int main()
+{
+    int choice;
+    switch(choice)
+    {
+        case 1:
+               if(choice==1)
+               setdata();
+               break;
+        case 2:
+               if(choice==2)
+               display();
+               break;
+        case 3:
+               if(choice==3)
+               search();
+               break;
+        case 4:
+               if(choice==4)
+               modify();
+               break;
+        case 5:
+               if(choice==5)
+               delete();
+               break;
+        case 6:
+                exit;
+    }
+    return 0;
+}
+
+
+
+
